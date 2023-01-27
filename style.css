@@ -209,7 +209,7 @@ main {
     display: inline;
 }
 
-.miniblock a {
+.block-3 .miniblock a {
     float: right;
     color: var(--moderate-cyan);
 }
@@ -218,7 +218,7 @@ main {
     float: right;
     background-color: var(--moderate-cyan);
     color: var(--white);
-    padding: 10px 25px;
+    padding: 15px 25px;
     border-radius: 1.8em;
     border: none;
     width: 150px;
@@ -268,13 +268,78 @@ main {
     gap: 1.2em;
 }
 
-.modal input[type="number"] {
-    /* padding: 0.8em 0; */
-    width: 70px;
-    height: 40px;
-    border-radius: 1em;
+.pledge-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    gap: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 40px;
+    cursor: pointer;
+    height: 2.6em;
+}
+
+.pledge-input {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--black);
+    width: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
-    outline: var(--svg-gray);
+    gap: 1rem;
+}
+
+
+.back-row {
+    display: inline;
+    float: right;
+    margin: 0;
+}
+
+form {
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.modal .miniblock a{
+    color: var(--moderate-cyan);
+    margin-left: 1em;
+}
+
+.modal .miniblock * {
+    margin-bottom: 1em;
+}
+
+hr {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border: 1px solid var(--light-gray);
+}
+
+.enter-pledge input {
+    margin-right: 1em;
+}
+
+.enter-pledge span {
+    color: var(--svg-gray);
+}
+
+.type-selection {
+    width: 25px;
+    height: 25px;
+    margin: 0 1em 0 0;
+    cursor: pointer;
+    transform: translateY(5px);
 }
 
 /* success modal */
@@ -297,6 +362,7 @@ main {
     color: white;
     border-radius: 15px;
 }
+
 
 /* utilities */
 
