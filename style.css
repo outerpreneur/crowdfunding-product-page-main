@@ -34,6 +34,37 @@ main {
     min-height: 100vh;
 }
 
+.menu-mobile {
+    background-color: white;
+    width: 90%;
+    margin: 3em auto;
+    color: black;
+    list-style: none;
+    border-radius: 10px;
+    top: 9%;
+    position: absolute;
+    left: 5%;
+}
+
+.menu-mobile nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+}
+
+.menu-mobile nav li {
+    border-bottom: 1px solid rgb(198, 198, 198);
+    width: 100%;
+    margin-left: 0;
+}
+
+.menu-mobile nav li a {
+    margin: 1em;
+    display: block;
+}
+
 /* header */
 
 .header-items {
@@ -52,6 +83,7 @@ main {
     text-decoration: none;
     color: var(--white)
 }
+
 
 
 /* blocks structure */
@@ -78,10 +110,6 @@ main {
 
 .block-1 {
     margin-top: -6.5%;
-}
-
-.block-2 {
-
 }
 
 /* blocks inner content */
@@ -368,4 +396,44 @@ hr {
 
 .hidden {
     display: none;
+}
+
+
+/* responsive styles */
+
+@media screen and (max-width: 1200px) {
+    .header-items {
+        padding: 0 2em;
+    }
+    .header-items nav {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .blocks-margin, .modals-margin, .success-modal {
+        width: 90%;
+    }
+    .blocks p {
+        font-size: 16px;
+    } 
+    
+    .blocks h1 {
+        font-size: 20px;
+    }
+    .action-buttons {
+        justify-content: center;
+        gap: 1em;
+        margin: 1em 0;
+    }
+
+    .bookmark-btn {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
 }
