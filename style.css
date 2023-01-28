@@ -290,6 +290,10 @@ dialog {
     border: none;
 }
 
+dialog:not([open]) { 
+    display: none
+ }
+
 .close-modal {
     position: absolute;
     top: 0;
@@ -303,10 +307,10 @@ dialog::backdrop {
 }
 
 .modal-content {
-    position: absolute;
+    position: absolute; 
     top: 7.5%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); 
 }
 
 .modals-margin {
@@ -330,9 +334,9 @@ dialog::backdrop {
 /* selection modal  */
 
 .selection-modal {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 1.2em; */
+    gap: 1.2em;
     padding: 3em;
 }
 
@@ -413,7 +417,7 @@ hr {
 /* success modal */
 
 .success-modal {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
