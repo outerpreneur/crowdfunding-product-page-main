@@ -16,22 +16,34 @@
 
 /* structure */
 
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
 body {
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
+    min-height: 100%;
 }
 
 header {
     background-image: url(./images/image-hero-desktop.jpg);
     min-height: 55vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center top;
 }
 
 main {
     background-color: var(--gray);
     min-height: 100vh;
+    background-color: white !important;
 }
 
 .menu-mobile {
@@ -44,6 +56,7 @@ main {
     top: 9%;
     position: absolute;
     left: 5%;
+    z-index: 2;
 }
 
 .menu-mobile nav {
@@ -109,7 +122,7 @@ main {
 }
 
 .block-1 {
-    margin-top: -6.5%;
+    margin-top: -14.5%;
 }
 
 /* blocks inner content */
@@ -137,6 +150,7 @@ main {
     color: var(--white);
     border: none;
     border-radius: 1.8em;
+    cursor: pointer;
 }
 
 .bookmark-gp {
@@ -197,7 +211,7 @@ main {
     left: calc(100% + 1.25rem);
     bottom: 0;
     height: 100%;
-    border-right: 5px solid var(red) !important;
+    border-right: 5px solid var(red);
 }
 
 .backing-bar {
@@ -272,6 +286,29 @@ main {
 
 /* modals */
 
+dialog {
+    border: none;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2em;
+    cursor: pointer;
+}
+
+dialog::backdrop {
+    background: rgb(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: absolute;
+    top: 7.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .modals-margin {
     width: 50%;
     margin-right: auto;
@@ -288,12 +325,15 @@ main {
     color: var(--dark-gray);
 }
 
+
+
 /* selection modal  */
 
 .selection-modal {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 1.2em;
+    gap: 1.2em; */
+    padding: 3em;
 }
 
 .pledge-input-container {
@@ -402,6 +442,7 @@ hr {
 /* responsive styles */
 
 @media screen and (max-width: 1200px) {
+
     .header-items {
         padding: 0 2em;
     }
@@ -436,4 +477,14 @@ hr {
     .stats {
         grid-template-columns: 1fr;
     }
+
+    header {
+        background-size: cover;
+    }
+
+    .block-1 {
+        margin-top: -14.5%;
+    }
 }
+
+
