@@ -8,7 +8,7 @@
 --black: hsl(0, 0%, 0%);
 --dark-gray: hsl(0, 0%, 48%);
 --white: rgb(255, 255, 255);
---gray: rgb(250, 250, 250);
+--gray: rgb(247, 244, 244);
 --light-gray: rgb(232, 232, 232);
 --body-font: "Commissioner", sans-serif;
 --svg-gray: rgba(112, 112, 112, 255);
@@ -30,6 +30,7 @@ body {
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
     min-height: 100%;
+    background-color: var(--gray);
 }
 
 header {
@@ -43,7 +44,6 @@ header {
 main {
     background-color: var(--gray);
     min-height: 100vh;
-    background-color: white !important;
 }
 
 .menu-mobile {
@@ -97,6 +97,19 @@ main {
     color: var(--white)
 }
 
+.mobile-menu-icon {
+    cursor: pointer;
+}
+
+.mobile-menu-close {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    fill: white;
+    color: white;
+    right: 0;
+    top: 0;
+}
 
 
 /* blocks structure */
@@ -175,7 +188,7 @@ main {
 .bookmark-img {
     position: absolute;
     left: 0;
-    height: 45px;
+    /* height: 30px; */
     cursor: pointer;
 }
 
@@ -224,6 +237,12 @@ main {
     padding: 0;
     height: 0.75em;
     pointer-events: none;
+}
+
+.block-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
 }
 
 .block-3 p {
@@ -492,3 +511,11 @@ hr {
 }
 
 
+@media screen and (min-width: 1200px) {
+    .menu-mobile {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: none;
+    }
+}

@@ -33,15 +33,20 @@
         <li>Get Started</li>
       </nav>
       <img src="./images/icon-hamburger.svg" class="mobile-menu-icon hidden" alt="mobile menu">
-      <img src="./images/icon-close-modal.svg" class="mobile-menu-close hidden" alt="mobile menu close">
+      <!-- <img src="./images/icon-close-modal.svg" class="mobile-menu-close" alt="mobile menu close"> -->
     </div>
-    <div class="menu-mobile hidden">
+    <dialog class="menu-mobile">
       <nav class="menu-mobile-nav">
         <li><a>About</li></a>
         <li><a>Discover</li></a>
         <li><a>Get Started</li></a>
       </nav>
-    </div>
+      <svg class="mobile-menu-close" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+          fill="#000" fill-rule="evenodd" opacity=".4" />
+      </svg>
+    </dialog>
   </header>
 
   <main>
@@ -55,7 +60,12 @@
             <button class="backing-btn">Back this project</button>
             <a class="bookmark-gp">
               <button class="bookmark-btn">Bookmark</button>
-              <img class="bookmark-img" src="./images/icon-bookmark.svg">
+              <svg class="bookmark-img" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+                  <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                </g>
+              </svg>
             </a>
           </div>
         </div>
