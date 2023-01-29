@@ -97,6 +97,10 @@ main {
     color: var(--white)
 }
 
+.header-items li {
+    cursor: pointer;
+}
+
 .mobile-menu-icon {
     cursor: pointer;
 }
@@ -166,6 +170,10 @@ main {
     cursor: pointer;
 }
 
+.backing-btn:hover {
+    background-color: var(--dark-cyan);
+}
+
 .bookmark-gp {
     position: relative;
 }
@@ -188,23 +196,27 @@ main {
 .bookmark-img {
     position: absolute;
     left: 0;
-    /* height: 30px; */
+    height: 45px;
+    transform: translateX(-10px);
     cursor: pointer;
 }
 
-.bookmark.bookmarked button {
+.bookmarked-button {
     color: var(--dark-cyan);
-  }
-  .bookmark.bookmarked svg circle {
-    fill: var(--dark-cyan);
-  }
-  .bookmark.bookmarked svg path {
-    fill: var(--white);
-  }
+}
+
+.bookmark-img.bookmarked g circle{
+    fill: var(--dark-cyan) ;
+}
+
+.bookmark-img.bookmarked g path {
+    fill: var(--white) ;
+}
 
 .stats {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
 }
 
 .stat {
@@ -243,6 +255,10 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2.5em;
+}
+
+.select-reward {
+    cursor: pointer;
 }
 
 .block-3 p {
@@ -507,6 +523,9 @@ hr {
 
     .block-1 {
         margin-top: -14.5%;
+    }
+    .modal {
+        width: 90%;
     }
 }
 
