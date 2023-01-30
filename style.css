@@ -14,13 +14,27 @@
 --svg-gray: rgba(112, 112, 112, 255);
 }
 
-/* structure */
+/* reset */
 
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* structure */
 
 html {
     height: 100vh;
@@ -286,8 +300,8 @@ main {
     padding: 1.4em;
 }
 
-.miniblock:active {
-    border: 1px solid var(--moderate-cyan);
+.marked {
+    border: 3px solid var(--moderate-cyan) !important;
 }
 
 .miniblock p, .miniblock h4, .miniblock a   {
@@ -342,9 +356,10 @@ dialog {
     border: none;
 }
 
-dialog:not([open]) { 
+.selection-modal:not([open]), .success-modal:not([open]) { 
     display: none
  }
+
 
 .close-modal {
     position: absolute;
@@ -415,6 +430,7 @@ dialog::backdrop {
     accent-color: var(--white);
     background: white;
     border: 2px solid red !important;
+    grid-area: area1;
 }
 
 .type-selection:checked {
@@ -427,8 +443,13 @@ dialog::backdrop {
     justify-content: space-between;
 }
 
+.pledge-row h4 {
+    grid-area: area2;
+}
+
 .pledge-row a {
     flex: 1;
+    grid-area: area2;
 }
 
 .pledge-column {
@@ -440,6 +461,10 @@ form {
     display: inline;
 }
 
+.pledge-input-container label {
+    transform: translateY(5px);
+}
+
 .pledge-input-container {
     display: flex;
     flex-direction: row;
@@ -447,11 +472,10 @@ form {
     justify-content: center;
     width: 100px;
     gap: 10px;
-    border: 1px solid var(--light-gray);
+    border: 3px solid var(--light-gray);
     border-radius: 40px;
     cursor: pointer;
     height: 2.9em;
-    background-color: aqua;
 }
 
 .pledge-input {
@@ -464,14 +488,14 @@ form {
     color: var(--black);
     width: 2rem;
     gap: 1rem;
-    transform: translateY(6px);
-    background-color: brown;
+    transform: translateY(7px);
 }
 
 
 .back-row {
     display: inline;
     margin: 0;
+    grid-area: area5;
 }
 
 .pledge {
@@ -503,6 +527,14 @@ hr {
     margin-top: 1em;
     margin-bottom: 2em;
     border: 1px solid var(--light-gray);
+}
+
+.enter-pledge {
+    grid-area: area4;
+}
+
+.pledge-column {
+     grid-area: area3;
 }
 
 .enter-pledge input {
@@ -618,14 +650,33 @@ hr {
     .modal {
         width: 90%;
     }
-}
 
-
-@media screen and (min-width: 1200px) {
-    .menu-mobile {
-        display: none;
+    .modal1 .miniblock {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "area1 area2"
+        "area3"
+        "area4"
+        "area5"
     }
-    .mobile-menu-icon {
-        display: none;
+
+    .back-row {
+        display: block;
+    }
+
+    .pledge-row {
+        display: block;
+    }
+
+    .type-selection {
+        position: static;
+    }
+
+    .enter-pledge {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

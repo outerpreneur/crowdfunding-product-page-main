@@ -8,8 +8,12 @@ const closeModal = document.querySelector(".close-modal")
 
 // mobile menu
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon")
-const mobileMenu = document.querySelector(".menu-mobile")
+const mobileMenu = document.querySelectorAll(".menu-mobile")
 const mobileMenuClose = document.querySelector(".mobile-menu-close")
+
+// miniblock
+
+const miniblock = document.querySelectorAll(".miniblock")
 
 // select reward buttons
 const selectReward = document.querySelectorAll(".select-reward")
@@ -78,9 +82,12 @@ function closeModal1() {
 }
 
 function showMenu() {
+    console.log('does it')
+    // mobileMenu.classList.toggle('show')
     mobileMenu.showModal()
-    mobileMenuIcon.style.display = "none"
-    mobileMenuClose.style.display = "block"
+    mobileMenu.style.display = "block"
+    // mobileMenuIcon.style.display = "none"
+    // mobileMenuClose.style.display = "block"
 }
 
 function closeMenu() {
@@ -166,10 +173,18 @@ continueBtn2.addEventListener('click', addValueToRaiseTotal2 )
 continueBtn3.addEventListener('click', addValueToRaiseTotal3 )
 
 
+
 // Loops
 
 selectReward.forEach(reward => {
     reward.addEventListener('click', () => {
         selectionModal.showModal()
     })
+});
+
+miniblock.forEach(block => {
+    block.addEventListener('click', () => {
+    console.log("it works")
+    miniblock.classList.toggle("marked")
+    });
 });
