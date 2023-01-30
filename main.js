@@ -149,6 +149,8 @@ function updateProgressBar () {
 
 
 
+
+
 // triggers
 
 backingBtn.addEventListener('click', showModal1 )
