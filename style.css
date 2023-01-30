@@ -651,4 +651,8 @@ hr {
         justify-content: center;
         align-items: center;
     } 
+
+    .modal buttons, .backing-btn {
+        font-size: 16px;
+    }
 }
