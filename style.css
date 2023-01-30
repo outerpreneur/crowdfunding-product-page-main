@@ -244,12 +244,13 @@ main {
     margin: 2em 0;
     outline: none;
     -webkit-appearance: none;
-    background: linear-gradient( to right, var(--moderate-cyan) 0, var(--moderate-cyan) 80%, var(--light-gray) 80%, var(--light-gray) 100% );
+    background: linear-gradient( to right, var(--moderate-cyan) 0, var(--moderate-cyan) 90%, var(--light-gray) 90%, var(--light-gray) 100% );
     border-radius: 10px;
     padding: 0;
     height: 0.75em;
     pointer-events: none;
 }
+
 
 .block-3 {
     display: flex;
@@ -284,6 +285,11 @@ main {
 
 .miniblock h4 {
     display: inline;
+    cursor: pointer;
+}
+
+.miniblock h4:hover {
+    color: var(--moderate-cyan);
 }
 
 .block-3 .miniblock a {
@@ -375,6 +381,32 @@ dialog::backdrop {
     padding: 3em;
 }
 
+.project-types {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7em;
+}
+
+
+.type-selection {
+    width: 25px;
+    height: 25px;
+    margin: 0 1em 0 0;
+    cursor: pointer;
+    transform: translateY(5px);
+    accent-color: var(--white);
+    background: white;
+    border: 2px solid red !important;
+}
+
+.type-selection:checked {
+    accent-color: var(--moderate-cyan);
+}
+
+form {
+    display: inline;
+}
+
 .pledge-input-container {
     display: flex;
     flex-direction: row;
@@ -411,11 +443,20 @@ dialog::backdrop {
     margin: 0;
 }
 
-form {
+.pledge {
     float: right;
     display: flex;
     align-items: center;
     gap: 1em;
+}
+
+.continue-btn {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.continue-btn:hover {
+    background-color: var(--dark-cyan);
 }
 
 .modal .miniblock a{
@@ -437,17 +478,16 @@ hr {
     margin-right: 1em;
 }
 
+.pledge-input-container:hover {
+    border: solid 1px var(--moderate-cyan);
+}
+
 .enter-pledge span {
     color: var(--svg-gray);
 }
 
-.type-selection {
-    width: 25px;
-    height: 25px;
-    margin: 0 1em 0 0;
-    cursor: pointer;
-    transform: translateY(5px);
-}
+
+
 
 /* success modal */
 
@@ -460,14 +500,28 @@ hr {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    gap: 2em;
+    position: absolute;
+    top: 33.5%
+}
+
+.success-modal * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.success-modal img {
+    width: 100px;
 }
 
 .success-modal button {
     background-color: var(--moderate-cyan);
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: white;
-    border-radius: 15px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 
