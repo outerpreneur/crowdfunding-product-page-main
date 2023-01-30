@@ -228,6 +228,10 @@ main {
     margin-right: auto;
 }
 
+.block-2 p {
+    text-align: center;
+}
+
 .block-2 span {
     font-size: 1.8em;
     color: var(--black);
@@ -280,6 +284,10 @@ main {
 .miniblock {
     border: 1px solid var(--light-gray);
     padding: 1.4em;
+}
+
+.miniblock:active {
+    border: 1px solid var(--moderate-cyan);
 }
 
 .miniblock p, .miniblock h4, .miniblock a   {
@@ -391,6 +399,13 @@ dialog::backdrop {
 }
 
 
+.modal-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .type-selection {
     width: 25px;
     height: 25px;
@@ -406,6 +421,21 @@ dialog::backdrop {
     accent-color: var(--moderate-cyan);
 }
 
+.pledge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pledge-row a {
+    flex: 1;
+}
+
+.pledge-column {
+    display: flex;
+    flex-direction: column;
+}
+
 form {
     display: inline;
 }
@@ -415,12 +445,13 @@ form {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: max-content;
+    width: 100px;
     gap: 10px;
     border: 1px solid var(--light-gray);
     border-radius: 40px;
     cursor: pointer;
-    height: 2.6em;
+    height: 2.9em;
+    background-color: aqua;
 }
 
 .pledge-input {
@@ -432,17 +463,14 @@ form {
     font-weight: 700;
     color: var(--black);
     width: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
     gap: 1rem;
+    transform: translateY(6px);
+    background-color: brown;
 }
 
 
 .back-row {
     display: inline;
-    float: right;
     margin: 0;
 }
 
@@ -545,6 +573,12 @@ hr {
     .header-items nav {
         display: none;
     }
+
+    .modal-selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+
 
     .mobile-menu-icon {
         display: block;
