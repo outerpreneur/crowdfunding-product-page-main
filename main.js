@@ -48,6 +48,7 @@ const NumberBackers = document.getElementById("pledge-counter")
 let NumberOfBackers = 5007
 const moneyRaisedCounter = document.getElementById('money-raised-counter')
 let TotalMoneyRaised = 89914
+let backingBarValue = document.querySelector('.backing-bar')
 
 // pledge input
 
@@ -125,6 +126,10 @@ function addValueToRaiseTotal() {
     event.preventDefault()
     moneyRaisedCounter.innerText = newTotalMoneyRaised.toLocaleString('en-US')
     showThankYou()
+    backingBarValue.value = newTotalMoneyRaised
+    const backingBarMaxValue = 100000
+    let progressPercentage = (newTotalMoneyRaised / backingBarMaxValue) * 100
+    backingBarValue.style.background = `linear-gradient( to right, var(--moderate-cyan) 0, var(--moderate-cyan) ${progressPercentage}%, var(--light-gray) 90%, var(--light-gray) 100% )`;
 }
 
 
