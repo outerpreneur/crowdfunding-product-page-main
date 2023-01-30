@@ -430,7 +430,6 @@ dialog::backdrop {
     accent-color: var(--white);
     background: white;
     border: 2px solid red !important;
-    grid-area: area1;
 }
 
 .type-selection:checked {
@@ -443,13 +442,9 @@ dialog::backdrop {
     justify-content: space-between;
 }
 
-.pledge-row h4 {
-    grid-area: area2;
-}
 
 .pledge-row a {
     flex: 1;
-    grid-area: area2;
 }
 
 .pledge-column {
@@ -495,7 +490,6 @@ form {
 .back-row {
     display: inline;
     margin: 0;
-    grid-area: area5;
 }
 
 .pledge {
@@ -527,14 +521,6 @@ hr {
     margin-top: 1em;
     margin-bottom: 2em;
     border: 1px solid var(--light-gray);
-}
-
-.enter-pledge {
-    grid-area: area4;
-}
-
-.pledge-column {
-     grid-area: area3;
 }
 
 .enter-pledge input {
@@ -607,10 +593,8 @@ hr {
     }
 
     .modal-selection-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2fr, auto);
     }
-
-
 
     .mobile-menu-icon {
         display: block;
@@ -651,7 +635,7 @@ hr {
         width: 90%;
     }
 
-    .modal1 .miniblock {
+    /* .modal1 .miniblock {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -659,24 +643,12 @@ hr {
         "area3"
         "area4"
         "area5"
-    }
-
-    .back-row {
-        display: block;
-    }
-
-    .pledge-row {
-        display: block;
-    }
-
-    .type-selection {
-        position: static;
-    }
+    } */
 
     .enter-pledge {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
+    } 
 }
