@@ -52,6 +52,7 @@ let backingBarValue = document.querySelector('.backing-bar')
 
 // pledge input
 
+const pledgeInputAll = document.querySelectorAll(".pledge-input")
 const pledgeInput1 = document.querySelector("#item-1 .pledge-input")
 const pledgeInput2 = document.querySelector("#item-2 .pledge-input")
 const pledgeInput3 = document.querySelector("#item-3 .pledge-input")
@@ -115,22 +116,37 @@ function closeThankYouModal() {
 
 function addOneBacker() {
      NumberOfBackers += 1
-     console.log(NumberOfBackers)
      NumberBackers.innerText = NumberOfBackers.toLocaleString('en-US')
 }
 
-function addValueToRaiseTotal() {
-    let valueInput2 = pledgeInput2.value
-    let convertToNumber = parseFloat(valueInput2)
-    let newTotalMoneyRaised = TotalMoneyRaised + convertToNumber
+function addValueToRaiseTotal2() {
     event.preventDefault()
-    moneyRaisedCounter.innerText = newTotalMoneyRaised.toLocaleString('en-US')
+    let valueInput = pledgeInput2.value
+    let convertToNumber = parseFloat(valueInput)
+    TotalMoneyRaised += convertToNumber
+    moneyRaisedCounter.innerText = TotalMoneyRaised.toLocaleString('en-US')
     showThankYou()
-    backingBarValue.value = newTotalMoneyRaised
+    updateProgressBar()
+}
+
+function addValueToRaiseTotal3() {
+    event.preventDefault()
+    let valueInput = pledgeInput3.value
+    let convertToNumber = parseFloat(valueInput)
+    TotalMoneyRaised += convertToNumber
+    moneyRaisedCounter.innerText = TotalMoneyRaised.toLocaleString('en-US')
+    showThankYou()
+    updateProgressBar()
+}
+
+
+function updateProgressBar () {
+    backingBarValue.value = TotalMoneyRaised
     const backingBarMaxValue = 100000
-    let progressPercentage = (newTotalMoneyRaised / backingBarMaxValue) * 100
+    let progressPercentage = (TotalMoneyRaised / backingBarMaxValue) * 100
     backingBarValue.style.background = `linear-gradient( to right, var(--moderate-cyan) 0, var(--moderate-cyan) ${progressPercentage}%, var(--light-gray) 90%, var(--light-gray) 100% )`;
 }
+
 
 
 // triggers
@@ -144,7 +160,8 @@ item1.addEventListener("click", showThankYou)
 item2.addEventListener('change', showPledge2)
 item3.addEventListener('change', showPledge3)
 successModalClose.addEventListener('click', closeThankYouModal)
-continueBtn2.addEventListener('click', addValueToRaiseTotal )
+continueBtn2.addEventListener('click', addValueToRaiseTotal2 )
+continueBtn3.addEventListener('click', addValueToRaiseTotal3 )
 
 
 // Loops
