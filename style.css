@@ -635,16 +635,6 @@ hr {
         width: 90%;
     }
 
-    /* .modal1 .miniblock {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-        "area1 area2"
-        "area3"
-        "area4"
-        "area5"
-    } */
-
     .enter-pledge {
         display: flex;
         flex-direction: column;
